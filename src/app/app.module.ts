@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Error404Component } from './error404/error404.component';
+import { MessageDetailsComponent } from './message-details/message-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { Error404Component } from './error404/error404.component';
     HomeComponent,
     ContactComponent,
     BlogComponent,
-    Error404Component
+    Error404Component,
+    MessageDetailsComponent
   ],
   imports: [
     BrowserModule,

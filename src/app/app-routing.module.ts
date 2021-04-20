@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import {Error404Component} from './error404/error404.component';
 import {ContactComponent} from './contact/contact.component';
 import {BlogComponent} from './blog/blog.component';
+import {MessageDetailsComponent} from './message-details/message-details.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent
+  },
+  {
+    path: 'message',
+    component: MessageDetailsComponent
   },
   {
     path: '',

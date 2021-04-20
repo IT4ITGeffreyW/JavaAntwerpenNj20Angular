@@ -1,10 +1,9 @@
-<div class="card message my-2" (click)="select()" [class.bg-info]="selected">
+<div class="card message my-2">
   <div class="card-body d-flex align-items-center">
     <img class="rounded-circle mr-3" height="60" [src]="message.img"/>
     <div>
       <h4>{{message.title | uppercase}}</h4>
       <p>{{message.body}}</p>
-      <button class="btn btn-secondary" routerLink="/message" [queryParams]="{id: message.id}">Details</button>
     </div>
   </div>
 </div>

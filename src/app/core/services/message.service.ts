@@ -34,4 +34,8 @@ export class MessageService {
   getMessages(): Message[] {
     return this.messages;
   }
+
+  getMessage(id: number): Message {
+    return this.messages.filter(m => m.id === id)[0];
+  }
 }
