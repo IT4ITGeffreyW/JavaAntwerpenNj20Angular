@@ -31,6 +31,8 @@ export class MessagesComponent implements OnInit {
 
   selectedMessageIndex: number = 0;
 
+  showMessages = true;
+
   constructor() {
   }
 
@@ -39,6 +41,10 @@ export class MessagesComponent implements OnInit {
 
   setSelected(id: number): void {
     this.selectedMessageIndex = id;
+  }
+
+  toggleShowMessages(): void {
+    this.showMessages = !this.showMessages;
   }
 
 }

@@ -1,5 +1,6 @@
 <h1 class="mb-4">Messages</h1>
-<div class="messages-container mt-3">
+<button class="btn btn-outline-primary" (click)="toggleShowMessages()">Toggle show messages</button>
+<div class="messages-container mt-3" *ngIf="showMessages">
   <app-message *ngFor="let message of messages"
                [message]="message"
                [selected]="selectedMessageIndex === message.id"
