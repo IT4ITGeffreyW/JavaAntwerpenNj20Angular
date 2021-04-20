@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Message} from '../core/models/message.model';
+import {MessageService} from '../core/services/message.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-messages',
@@ -8,35 +10,16 @@ import {Message} from '../core/models/message.model';
 })
 export class MessagesComponent implements OnInit {
 
-  messages: Message[] = [
-    {
-      id: 1,
-      title: 'My First Message',
-      body: 'My First Message body that I don\'t know what',
-      img: 'assets/img/me.jpg'
-    },
-    {
-      id: 2,
-      title: 'My Second Message',
-      body: 'My Second Message body that I don\'t know what',
-      img: 'assets/img/me.jpg'
-    },
-    {
-      id: 3,
-      title: 'My Third Message',
-      body: 'My Third Message body that I don\'t know what',
-      img: 'assets/img/me.jpg'
-    }
-  ];
-
+  messages: Message[] = [];
   selectedMessageIndex: number = 0;
 
   showMessages = true;
 
-  constructor() {
+  constructor(private messageService: MessageService) {
   }
 
   ngOnInit(): void {
+    this.messages = this.messageService.getMessages();
   }
 
   setSelected(id: number): void {
