@@ -1,0 +1,7 @@
+<h1 class="mb-4">Messages</h1>
+<div class="messages-container mt-3">
+  <app-message *ngFor="let message of messages"
+               [message]="message"
+               [selected]="selectedMessageIndex === message.id"
+               (isSelected)="setSelected(message.id)"></app-message>
+</div>
