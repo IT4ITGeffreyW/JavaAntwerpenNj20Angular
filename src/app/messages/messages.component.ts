@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Message} from '../core/models/message.model';
 import {MessageService} from '../core/services/message.service';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-messages',
