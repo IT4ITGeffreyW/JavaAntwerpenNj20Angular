@@ -14,6 +14,7 @@ import { BlogComponent } from './blog/blog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Error404Component } from './error404/error404.component';
 import { MessageDetailsComponent } from './message-details/message-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MessageDetailsComponent } from './message-details/message-details.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

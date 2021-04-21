@@ -1,6 +1,36 @@
 <h1 class="mb-4">Messages</h1>
-<button class="btn btn-outline-primary" (click)="toggleShowMessages()">Toggle show messages</button>
-<div class="messages-container mt-3" *ngIf="showMessages">
+<button class="btn btn-outline-primary" (click)="toggleShowMessages()">Add message</button>
+<div class="card my-3" *ngIf="!showMessages">
+  <div class="card-body">
+    <h4>Add Message</h4>
+    <form (ngSubmit)="addMessage(messageForm)" #messageForm="ngForm">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputTitle">Title</label>
+          <input type="text" class="form-control" id="inputTitle" required [(ngModel)]="newMessage.title"
+                 minlength="5" name="title" #messageTitle="ngModel"
+                 [ngClass]="{'is-invalid': messageTitle.touched && !messageTitle.valid}">
+          <div *ngIf="messageTitle.errors" class="alert alert-danger">
+            Enter a correct title
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputBody">Body</label>
+          <input type="text" class="form-control" id="inputBody" required [(ngModel)]="newMessage.body"
+                 minlength="5" name="body" #messageBody="ngModel"
+                 [ngClass]="{'is-invalid': messageBody.touched && !messageBody.valid}">
+          <div *ngIf="messageBody.errors" class="alert alert-danger">
+            Enter a correct body
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+  </div>
+</div>
+<div class="messages-container mt-3">
   <app-message *ngFor="let message of messages"
                [message]="message"
                [selected]="selectedMessageIndex === message.id"
