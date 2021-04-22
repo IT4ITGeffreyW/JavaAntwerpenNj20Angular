@@ -6,6 +6,7 @@ import {ContactComponent} from './contact/contact.component';
 import {BlogComponent} from './blog/blog.component';
 import {MessageDetailsComponent} from './message-details/message-details.component';
 import {UserGuard} from './shared/guards/user.guard';
+import {MessageGuard} from './shared/guards/message.guard';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
-    canActivate: [UserGuard]
+    canActivate: [UserGuard, MessageGuard]
   },
   {
     path: 'message',
