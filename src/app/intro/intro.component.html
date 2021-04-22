@@ -3,9 +3,13 @@
     <div class="row my-auto">
       <div class="col-md-12 col-lg_5 mx-auto">
         <h1>My First Angular Project Ever</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dignissimos nihil, reprehenderit vel
-          veniam vitae. Aliquam asperiores consectetur exercitationem ipsa, labore laudantium, non officia porro
-          recusandae repellendus velit voluptas voluptates!</p>
+        <ng-container *ngIf="quote">
+          <img class="rounded-pill my-3" [src]="quote.background" alt="quote background image">
+          <blockquote class="blockquote">
+            <p class="mb-0">{{quote.quote}}</p>
+            <footer class="blockquote-footer">{{quote.author}} in <cite title="Source Title">{{quote.title}}</cite></footer>
+          </blockquote>
+        </ng-container>
         <button class="btn btn-primary mx-3">Discover</button>
         <button class="btn btn-secondary mx-3">Contact me</button>
       </div>
