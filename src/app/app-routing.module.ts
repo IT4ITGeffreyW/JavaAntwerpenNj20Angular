@@ -5,6 +5,7 @@ import {Error404Component} from './error404/error404.component';
 import {ContactComponent} from './contact/contact.component';
 import {BlogComponent} from './blog/blog.component';
 import {MessageDetailsComponent} from './message-details/message-details.component';
+import {UserGuard} from './shared/guards/user.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    component: BlogComponent
+    component: BlogComponent,
+    canActivate: [UserGuard]
   },
   {
     path: 'message',
